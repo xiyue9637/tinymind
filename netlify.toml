@@ -3,14 +3,9 @@
   command = "npm run build"
 
 [build.environment]
-  # 强制禁用 Netlify 的 Next.js Standalone 模式
   NEXT_PRIVATE_STANDALONE_OUTPUT = "false"
-
-[functions]
-  directory = "netlify/functions"
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/nextjs"
+  to = "/index.html"
   status = 200
-  force = true
