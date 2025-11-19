@@ -1,0 +1,17 @@
+[build]
+  publish = ".next"
+  command = "npm run build && npm run start"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/nextjs"
+  status = 200
+  force = true
+
+[dev]
+  command = "npm run dev"
+  port = 3000
+  publish = ".next"
