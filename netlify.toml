@@ -1,6 +1,10 @@
 [build]
   publish = ".next"
-  command = "npm run build && npm run start"
+  command = "npm run build"
+
+[build.environment]
+  # 强制禁用 Netlify 的 Next.js Standalone 模式
+  NEXT_PRIVATE_STANDALONE_OUTPUT = "false"
 
 [functions]
   directory = "netlify/functions"
@@ -10,8 +14,3 @@
   to = "/.netlify/functions/nextjs"
   status = 200
   force = true
-
-[dev]
-  command = "npm run dev"
-  port = 3000
-  publish = ".next"
